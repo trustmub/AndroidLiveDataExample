@@ -16,6 +16,7 @@ open class BaseActivity : AppCompatActivity() {
         connectionListener.observe(this, Observer<ConnectionModels> { connection ->
             if (connection?.isConnected!!) {
                 when (connection.type) {
+                    /** using the Anko Library to simplify toast messages */
                     ConnectivityManager.TYPE_MOBILE -> toast("Mobile Network ON")
                     ConnectivityManager.TYPE_WIFI -> toast("Wifi Network ON")
                     else -> toast("${connection.type} is disconnected")

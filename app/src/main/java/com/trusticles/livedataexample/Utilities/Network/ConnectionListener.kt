@@ -34,7 +34,6 @@ class ConnectionListener(private val context: Context) : LiveData<ConnectionMode
                     }
                 } else {
                     postValue(ConnectionModels(0, false))
-                    println("connection type is no ${activeNetwork.type}")
                 }
 
             }
